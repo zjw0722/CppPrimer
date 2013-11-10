@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	cout << "Enter two numbers:" << endl;
+	int v1, v2;
+	cin >> v1 >> v2; // 读入两个数
+	// 用较小的数作为下界lower、较大的数作为上界upper
+	int lower, upper;
+	if (v1 <= v2) 
+	{
+		lower = v1;
+		upper = v2;
+	} 
+	else 
+	{
+		lower = v2;
+		upper = v1;
+	}
+	// 输出从lower到upper之间的值
+	cout << "Values of " << lower << "to " 
+		<< upper << "inclusive are:" << endl;
+	for (int val = lower, count=1; val <=upper; ++val, ++count) 
+	{
+		std::cout << val << " ";
+		if (count % 10 == 0) // 每行输出10个值
+			cout << std::endl;
+	}
+	
+	return 0;
+}
+
